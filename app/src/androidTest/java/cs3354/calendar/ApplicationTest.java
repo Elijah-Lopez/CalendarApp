@@ -1,4 +1,4 @@
-package cs3354.calendarapp;
+package cs3354.calendar;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
