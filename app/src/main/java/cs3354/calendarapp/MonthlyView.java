@@ -16,7 +16,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CalendarView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MonthlyView extends AppCompatActivity {
 
@@ -28,12 +30,30 @@ public class MonthlyView extends AppCompatActivity {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
-    SectionsPagerAdapter mSectionsPagerAdapter;
+    //SectionsPagerAdapter mSectionsPagerAdapter;
 
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    ViewPager mViewPager;
+
+    CalendarView calendar;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_monthly_view);
+
+        calendar = (CalendarView) findViewById(R.id.calendar);
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                Toast.makeText(getApplicationContext(), dayOfMonth + "/" + month + "/" + year, Toast.LENGTH_LONG).show();
+
+            }
+        });
+    }
+
+ /*   ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,12 +93,14 @@ public class MonthlyView extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
+*/
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
+
+/*
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -113,20 +135,30 @@ public class MonthlyView extends AppCompatActivity {
         }
     }
 
+*/
+
     /**
      * A placeholder fragment containing a simple view.
      */
+
+    /*
+
     public static class PlaceholderFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
          */
+
+            /*
         private static final String ARG_SECTION_NUMBER = "section_number";
 
         /**
          * Returns a new instance of this fragment for the given section
          * number.
          */
+
+        /*
+
         public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
@@ -145,5 +177,7 @@ public class MonthlyView extends AppCompatActivity {
             return rootView;
         }
     }
+
+    */
 
 }
