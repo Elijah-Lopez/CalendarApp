@@ -2,6 +2,7 @@ package cs3354.calendarapp;
 
 import java.util.Locale;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +40,8 @@ public class MonthlyView extends AppCompatActivity {
 
     CalendarView calendar;
 
+    private static Button button_sbm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +55,23 @@ public class MonthlyView extends AppCompatActivity {
 
             }
         });
+
+        OnClickButtonListener();
+    }
+
+    public void OnClickButtonListener() {
+        button_sbm = (Button)findViewById(R.id.button);
+        button_sbm.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent("cs3354.calendarapp.CreateEventActivity");
+                        startActivity(intent);
+                    }
+                }
+
+        );
+
     }
 
  /*   ViewPager mViewPager;
