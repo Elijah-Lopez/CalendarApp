@@ -14,31 +14,39 @@ tools:context=".MonthlyView"
 
 <CalendarView android:id="@+id/calendar"
     android:layout_width="331dp"
-    android:layout_height="312dp"
+    android:layout_height="298dp"
     android:showWeekNumber="false"
     android:clickable="false"
     android:contextClickable="false"
-    android:backgroundTint="#ff1357" />
+    android:backgroundTint="#119d90" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="View All Events On This Week"
         android:id="@+id/button3"
-        android:layout_weight="0.41" />
+        android:background="#0b9a8c"
+        android:textColor="#ffffff"
+        android:layout_weight=".30"
+        android:breakStrategy="simple" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="View All Events On This Day"
         android:id="@+id/button2"
-        android:layout_weight="0.47" />
+        android:background="#0b9a8c"
+        android:textColor="#ffffff"
+        android:layout_weight=".30"
+        android:breakStrategy="simple" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create New Event On This Day"
         android:id="@+id/button"
-        android:background="#ff1b60" />
+        android:background="#0b9a8c"
+        android:textColor="#ffffff"
+        android:layout_weight=".30" />
 
 </LinearLayout>

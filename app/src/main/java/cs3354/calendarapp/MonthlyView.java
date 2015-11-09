@@ -40,7 +40,9 @@ public class MonthlyView extends AppCompatActivity {
 
     CalendarView calendar;
 
-    private static Button button_sbm;
+    private static Button button_ce;
+    private static Button button_wv;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,16 +58,31 @@ public class MonthlyView extends AppCompatActivity {
             }
         });
 
-        OnClickButtonListener();
+        OnClickButtonListenerCE();
     }
 
-    public void OnClickButtonListener() {
-        button_sbm = (Button)findViewById(R.id.button);
-        button_sbm.setOnClickListener(
+    public void OnClickButtonListenerCE() {
+        button_ce = (Button)findViewById(R.id.button);
+        button_ce.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent("cs3354.calendarapp.CreateEventActivity");
+                        startActivity(intent);
+                    }
+                }
+
+        );
+
+    }
+
+    public void OnClickButtonListenerWV() {
+        button_wv = (Button)findViewById(R.id.button3);
+        button_wv.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent("cs3354.calendarapp.WeeklyView");
                         startActivity(intent);
                     }
                 }
